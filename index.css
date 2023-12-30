@@ -1,4 +1,3 @@
-
 /* Table of Contents */
 
 /* -----------------------------------------------------*/
@@ -9,7 +8,7 @@
 
 /* >>> 3. FONTS  <<<<<<<<<<<<<< */
 
-/* >>> 4. NAVIGATION <<<<<<<<<< */
+/* >>> 4. MAIN <<<<<<<<<< */
 
 /* >>> 5. COMPONENTS <<<<<<<<<< */
 
@@ -17,65 +16,77 @@
 
 /* -----------------------------------------------------*/
 
-
-@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap");
 
 /* >>> 1. RESETS  <<<<<<<<<<<<< */
 
-:root{
+:root {
   padding: 0;
   margin: 0;
   font-size: 62.5%;
   box-sizing: border-box;
 
-/* >>> 2. CSS VARIABLES <<<<<<< */
+  /* >>> 2. CSS VARIABLES <<<<<<< */
 
---color-black: #0f0000;
---color-grey: #BABABA;
---color-white: #fffffd;
---color-green: #BAF584;
---color-purple: rebbeccapurple;
+  --color-black: #0f0000;
+  --color-grey: #bababa;
+  --color-white: #fffffd;
+  --color-green: #baf584;
+  --color-purple: rebbeccapurple;
 
-/* >>> 3. FONTS  <<<<<<<<<<<<<< */
+  /* >>> 3. FONTS  <<<<<<<<<<<<<< */
 
---font-heading: 'Arima', serif;
---font-handwritten: 'Caveat' , cursive;
---font-sloppy: 'HandwritingPlain', cursive;
---font-handwritten-Beth: 'Beth Ellen', cursive;
---font-regular: 'Roboto Flex', sans-serif;
+  --font-heading: "Arima", serif;
+  --font-handwritten: "Caveat", cursive;
+  --font-sloppy: "HandwritingPlain", cursive;
+  --font-handwritten-Beth: "Beth Ellen", cursive;
+  --font-regular: "Roboto Flex", sans-serif;
 }
 
-@font-face{
+@font-face {
   font-family: var(--font-heading);
-  src: url('./fonts/Arima/Arima-VariableFont_wght.ttf') format('truetype');
+  src: url("./fonts/Arima/Arima-VariableFont_wght.ttf") format("truetype");
 }
 
-@font-face{
+@font-face {
   font-family: var(--font-handwritten);
-  src: url('./fonts/Caveat/Caveat-VariableFont_wght.ttf') format('truetype');
+  src: url("./fonts/Caveat/Caveat-VariableFont_wght.ttf") format("truetype");
 }
 
-@font-face{
+@font-face {
   font-family: var(--font-sloppy);
-  src: url('./fonts/Handwriting/HandwritingPlain.ttf') format('truetype');
+  src: url("./fonts/Handwriting/HandwritingPlain.ttf") format("truetype");
 }
 
-@font-face{
+@font-face {
   font-family: var(--font-regular);
-  src: url('./fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf') format('truetype');
+  src: url("./fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf")
+    format("truetype");
 }
 
-/* >>> 4. NAVIGATION <<<<<<<<<< */
+@font-face {
+  font-family: "Mona Sans";
+  src: url("Mona-Sans.woff2") format("woff2 supports variations"),
+    url("Mona-Sans.woff2") format("woff2-variations");
+  font-weight: 200 900;
+  font-stretch: 75% 125%;
+}
 
-nav{
+html {
+  font-family: "Mona Sans";
+}
+
+/* >>> 4. MAIN <<<<<<<<<< */
+
+nav {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   height: 3rem;
-  background: #3E8DA8;
-  box-shadow: 0 0.1 0.2rem #FFFFFF;
+  background: #3e8da8;
+  box-shadow: 0 0.1 0.2rem #1b1818;
   z-index: 1;
 }
 
