@@ -15,6 +15,16 @@ class Footer extends HTMLElement {
           font-size: 2rem;
           color: var(--color-white);
         }
+
+        a {
+          color: var(--color-white);
+          text-decoration: none;
+        }
+
+        a:hover {
+          color: var(--color-green);
+          text-decoration: underline;
+        }
       </style>
 
         <section>
