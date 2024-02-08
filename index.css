@@ -93,12 +93,13 @@ body {
   background-color: var(--color-purple);
 }
 
-header {
+header,
+footer {
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-handwritten-Beth);
   font-size: 2rem;
-  text-align: center;
+  padding: 0 2rem 0 2rem;
 }
 
 nav {
@@ -107,6 +108,11 @@ nav {
   align-items: center;
   font-family: var(--font-handwritten-Beth);
   font-size: 2rem;
+  height: 100%;
+}
+
+nav > *:first-child {
+  font-size: 3.5rem;
 }
 
 main {
@@ -114,7 +120,7 @@ main {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
   gap: 1rem;
-  padding: 1rem;
+  padding: 4rem;
   overflow: scroll;
 }
 
