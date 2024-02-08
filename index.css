@@ -32,7 +32,7 @@
   --color-grey: #bababa;
   --color-white: #fffffd;
   --color-green: #baf584;
-  --color-purple: rebbeccapurple;
+  --color-purple: #2d0041;
 
   /* >>> 3. FONTS  <<<<<<<<<<<<<< */
 
@@ -78,16 +78,66 @@ html {
 
 /* >>> 4. MAIN <<<<<<<<<< */
 
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 7rem 1fr 7rem;
+  background-color: var(--color-purple);
+}
+
+header,
+footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-handwritten-Beth);
+  font-size: 2rem;
+  padding: 0 2rem 0 2rem;
+}
+
 nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: var(--font-handwritten-Beth);
+  font-size: 2rem;
   height: 100%;
-  height: 3rem;
-  background: #3e8da8;
-  box-shadow: 0 0.1 0.2rem #1b1818;
-  z-index: 1;
+}
+
+nav > *:first-child {
+  font-size: 3.5rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 4rem;
+  overflow: scroll;
+}
+
+a {
+  color: var(--color-white);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-green);
+  text-decoration: underline;
+}
+
+p {
+  color: var(--color-white);
+  font-family: var(--font-regular);
+  font-size: 2rem;
 }
 
 /* >>> 5. COMPONENTS <<<<<<<<<< */
