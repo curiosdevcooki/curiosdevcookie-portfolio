@@ -138,6 +138,13 @@ p {
   color: var(--color-white);
   font-family: var(--font-regular);
   font-size: 2rem;
+  line-height: 1.5;
+}
+
+h3 {
+  color: var(--color-white);
+  font-family: var(--font-handwritten-Beth);
+  font-size: 2rem;
 }
 
 /* >>> 5. COMPONENTS <<<<<<<<<< */
