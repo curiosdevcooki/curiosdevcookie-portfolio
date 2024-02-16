@@ -28,7 +28,7 @@ figure {
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fr 5rem;
   gap: 3rem;
-  font-family: var(--font-heading);
+  font-family: var(--font-headings);
 }
 
 h4 {
