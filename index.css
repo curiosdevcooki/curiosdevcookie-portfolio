@@ -36,26 +36,15 @@
 
   /* >>> 3. FONTS  <<<<<<<<<<<<<< */
 
-  --font-heading: "Roboto Flex", sans-serif;
-  --font-handwritten: "Caveat", cursive;
-  --font-sloppy: "HandwritingPlain", cursive;
+  --font-heading-narrow: "Arima", sans-serif;
+  --font-headings: "Mona Sans", sans-serif;
   --font-handwritten-Beth: "Beth Ellen", cursive;
   --font-regular: "Roboto Flex", sans-serif;
 }
 
 @font-face {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading-narrow);
   src: url("./fonts/Arima/Arima-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: var(--font-handwritten);
-  src: url("./fonts/Caveat/Caveat-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: var(--font-sloppy);
-  src: url("./fonts/Handwriting/HandwritingPlain.ttf") format("truetype");
 }
 
 @font-face {
