@@ -1,39 +1,64 @@
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
-  /* grid-template-rows: repeat(auto-fit, minmax(50rem, 1fr)); */
+  grid-template-rows: repeat(auto-fit, minmax(55rem, 1fr));
   gap: 5rem;
 }
 
 .project {
+  display: grid;
+  grid-template-rows: 10rem 1fr 10rem;
+
+  font-family: var(--font-headings);
   border: 0.2rem solid var(--color-white);
   border-radius: 0.5rem;
   box-shadow: 0.5rem 0.5rem 0.5rem var(--color-black);
   background-color: var(--color-black);
   color: var(--color-white);
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
 img {
-  width: 100%;
-  object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
+  width: 100%;
 }
 
-figure {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 5rem 1fr 5rem;
+.project-figure {
+  display: flex;
+  flex-direction: column;
   gap: 3rem;
-  font-family: var(--font-headings);
 }
 
 h4 {
   font-size: 2.5rem;
+  padding-left: 4rem;
 }
 
 figcaption {
   font-size: 1.5rem;
+  line-height: 1.5;
+  overflow-y: scroll;
+  height: 10rem;
+}
+
+.icons {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 4rem;
+  justify-content: right;
+}
+
+.icon {
+  width: 5rem;
+}
+
+/* scrollbar styling: */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-white);
+  border-radius: 0.5rem;
 }
