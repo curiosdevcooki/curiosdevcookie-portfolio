@@ -1,6 +1,6 @@
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(55rem, 1fr));
   gap: 5rem;
 }
@@ -47,10 +47,12 @@ figcaption {
   gap: 1rem;
   padding: 1rem 4rem;
   justify-content: right;
+  align-items: center;
 }
 
 .icon {
-  width: 5rem;
+  height: 4rem;
+  width: auto;
 }
 
 /* scrollbar styling: */
