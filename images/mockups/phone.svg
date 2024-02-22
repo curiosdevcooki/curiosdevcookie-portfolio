@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="63" height="133" viewBox="0 0 127 263.4">
+  <rect x=".9" y=".9" width="125.2" height="261.5" rx="14.6" ry="14.6" style="fill: #fff; stroke-width: 0px" />
+  <path
+    d="M111.5,263.4H15.6c-8.6,0-15.6-7-15.6-15.6V15.6C0,7,7,0,15.6,0h95.9c8.6,0,15.6,7,15.6,15.6v232.2c0,8.6-7,15.6-15.6,15.6ZM15.6,1.9C8,1.9,1.9,8,1.9,15.6v232.2c0,7.5,6.1,13.7,13.7,13.7h95.9c7.5,0,13.7-6.1,13.7-13.7V15.6c0-7.5-6.1-13.7-13.7-13.7H15.6Z"
+    style="fill: #1f191a; stroke-width: 0px" />
+  <rect x="7.7" y="32.2" width="111.6" height="198.8" style="fill: #3f3e40; stroke-width: 0px" />
+  <image x="7.7" y="32.2" width="111.6" height="198.8"
+    href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1362px-Placeholder_view_vector.svg.png" />
+  <path
+    d="M119.3,232H7.7c-.5,0-.9-.4-.9-.9V32.2c0-.5.4-.9.9-.9h111.6c.5,0,.9.4.9.9v198.8c0,.5-.4.9-.9.9ZM8.6,230.1h109.8V33.2H8.6v197Z"
+    style="fill: #1f191a; stroke-width: 0px" />
+  <path
+    d="M73.9,19.4h-20.7c-1.8,0-3.3-1.5-3.3-3.3h0c0-1.9,1.5-3.3,3.3-3.3h20.7c1.8,0,3.3,1.5,3.3,3.3h0c0,1.9-1.5,3.3-3.3,3.3ZM53.2,14.7c-.8,0-1.4.6-1.4,1.4h0c0,.8.6,1.5,1.4,1.5h20.7c.8,0,1.4-.6,1.4-1.4h0c0-.8-.6-1.5-1.4-1.5h-20.7Z"
+    style="fill: #1f191a; stroke-width: 0px" />
+  <rect x="50.4" y="237.7" width="26.3" height="17" rx="1.7" ry="1.7" style="fill: #fff; stroke-width: 0px" />
+  <path
+    d="M73,255.5h-19c-2.4,0-4.4-2-4.4-4.4v-9.7c0-2.4,2-4.4,4.4-4.4h19c2.4,0,4.4,2,4.4,4.4v9.7c0,2.4-2,4.4-4.4,4.4ZM54,238.4c-1.6,0-2.9,1.3-2.9,2.9v9.7c0,1.6,1.3,2.9,2.9,2.9h19c1.6,0,2.9-1.3,2.9-2.9v-9.7c0-1.6-1.3-2.9-2.9-2.9h-19Z"
+    style="fill: #232020; stroke-width: 0px" />
+</svg>

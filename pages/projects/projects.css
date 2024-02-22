@@ -29,6 +29,12 @@ img {
   gap: 3rem;
 }
 
+.mockups {
+  display: flex;
+  justify-content: center;
+  height: 20rem;
+}
+
 h2 {
   position: sticky;
   text-shadow: 0.2rem 0.2rem 0.2rem var(--color-black);
