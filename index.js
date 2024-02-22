@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   <path
                     d="M132.4,742.9h1085c6.9,0,42.9-.2,75.3-4.8,38.4-5.4,57.1-14.6,57.1-28.2v-18.2c0-7.3-6.2-13.2-13.9-13.2H13.9c-7.7,0-13.9,5.9-13.9,13.2v18.2c0,13.6,18.7,22.8,57.1,28.2,32.4,4.5,68.4,4.8,75.3,4.8ZM7.6,709.9v-18.2c0-3.3,2.8-6,6.3-6h1322c3.5,0,6.3,2.7,6.3,6v18.2c0,16.9-62.8,25.7-124.8,25.7H132.4c-62,0-124.8-8.8-124.8-25.7Z"
                     fill="#1f191a" stroke-width="0" />
-                  <rect x="165.4" y="54.6" width="1019" height="584.7" fill="#6207bd" stroke-width="0" />
+                  <rect x="165.4" y="54.6" width="1019" height="584.7" fill="#3f3e40" stroke-width="0" />
                   <image x="165.4" y="54.6" width="1019" height="584.7"
                     href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1362px-Placeholder_view_vector.svg.png" />
                   <path
