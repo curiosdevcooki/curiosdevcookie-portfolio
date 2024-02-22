@@ -1,5 +1,6 @@
 # Mac OS X clutter
 .DS_Store
+images/.DS_Store
 
 # IDE specific
 .vscode
