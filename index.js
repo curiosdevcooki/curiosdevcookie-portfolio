@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
+
+  const projectIDs = getIDofLiElements();
+
+  createSVG();
+
+
+  SVGurl(projectIDs);
+});
+
+function createSVG() {
   const desktopSvg = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 1349.8 742.9">
                   <path d="M1240.7,36.4c0-18.1-15.4-32.8-34.4-32.8H143.5c-19,0-34.4,14.7-34.4,32.8v676.6h1131.6V36.4Z" fill="#fff"
@@ -14,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     fill="#1f191a" stroke-width="0" />
                   <rect x="165.4" y="54.6" width="1019" height="584.7" fill="#
                   " stroke-width="0" />
-                  <image x="165.4" y="54.6" width="1019" height="584.7"
-                    href="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/1362px-Placeholder_view_vector.svg.png" />
+                  <image class="desktop-image" x="165.4" y="54.6" width="1019" height="584.7"
+                     />
                   <path
                     d="M1184.4,642.9c2.1,0,3.8-1.6,3.8-3.6V54.6c0-2-1.7-3.6-3.8-3.6H165.4c-2.1,0-3.8,1.6-3.8,3.6v584.7c0,2,1.7,3.6,3.8,3.6h1019ZM169.2,58.3h1011.3v577.4H169.2V58.3Z"
                     fill="#1f191a" stroke-width="0" />
@@ -85,10 +95,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   const mockupElements = document.querySelectorAll('.mockups');
-  console.log(mockupElements);
 
   mockupElements.forEach(mockup => {
     mockup.innerHTML = `${desktopSvg}${phoneSvg}`;
     // Or use mockup.insertAdjacentHTML('beforeend', `${desktopSvg}${phoneSvg}`);
   });
-});
+}
+
+function getIDofLiElements() {
+  const projects = document.querySelectorAll('.project');
+  const projectIDs = [];
+
+  projects.forEach(el => {
+    projectIDs.push(el.id);
+  });
+
+  return projectIDs;
+}
+
+
+function SVGurl() {
+
+
+  const href = "/images/projects/desktop/figure-gallery.png";
+
+  // set href attribute for .desktop-image:
+  const svgImagehref = document.querySelectorAll(`.desktop-image`);
+
+  svgImagehref.forEach(svgImagehref => svgImagehref.setAttribute("href", href));
+
+}
