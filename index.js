@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  createSVG();
-  SVGurl();
+  createAndInsertSVG();
+  addImagesToSVG();
+
+  removeCertainMobileSVGs("mobileSVG-figure-ascii-art");
+
 });
 
 function getIDofLiElements() {
@@ -15,9 +18,15 @@ function getIDofLiElements() {
   return projectIDs;
 }
 
-function createSVG() {
-  const desktopSvg = `
-                <svg xmlns="http://www.w3.org/2000/svg" width="250" height="250" viewBox="0 0 1349.8 742.9">
+function createAndInsertSVG() {
+  const desktopSVGTemplate = `
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="250"
+                  height="250"
+                  viewBox="0 0 1349.8 742.9"
+                  id="placeholderIDdesktop"
+                >
                   <path d="M1240.7,36.4c0-18.1-15.4-32.8-34.4-32.8H143.5c-19,0-34.4,14.7-34.4,32.8v676.6h1131.6V36.4Z" fill="#fff"
                     stroke-width="0" />
                   <path
@@ -44,7 +53,7 @@ function createSVG() {
                     y="54.6"
                     width="1019"
                     height="584.7"
-                     />
+                    />
                   <path
                     d="M1184.4,642.9c2.1,0,3.8-1.6,3.8-3.6V54.6c0-2-1.7-3.6-3.8-3.6H165.4c-2.1,0-3.8,1.6-3.8,3.6v584.7c0,2,1.7,3.6,3.8,3.6h1019ZM169.2,58.3h1011.3v577.4H169.2V58.3Z"
                     fill="#1f191a"
@@ -58,12 +67,13 @@ function createSVG() {
                     stroke-width="0" />
                 </svg>`;
 
-  const phoneSvg = `
+  const mobileSVGTemplate = `
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="63"
                   height="133"
                   viewBox="0 0 127 263.4"
+                  id="placeholderIDmobile"
                 >
                   <rect
                     x=".9"
@@ -116,24 +126,42 @@ function createSVG() {
                   />
                 </svg>`;
 
+  insertSVG(desktopSVGTemplate, mobileSVGTemplate);
+}
+
+function insertSVG(desktopSVGTemplate, mobileSVGTemplate) {
   const projectIDs = getIDofLiElements();
   console.log(projectIDs);
 
-  //  For every project, add the SVGs to the mockup div and add the projectID as class to its image element:
   projectIDs.forEach(projectID => {
     const mockup = document.getElementById(projectID).querySelector('.mockups');
-    mockup.innerHTML = `${desktopSvg}${phoneSvg}`;
-    // Or use mockup.insertAdjacentHTML('beforeend', `${desktopSvg}${phoneSvg}`);
 
-    const desktopImage = mockup.querySelector('.desktop-image');
-    const mobileImage = mockup.querySelector('.mobile-image');
-    desktopImage.classList.add(projectID);
-    mobileImage.classList.add(projectID);
+    const desktopSVG = addIDsToDesktopSVGs(desktopSVGTemplate, projectID);
+    const mobileSVG = addIDsToMobileSVGs(mobileSVGTemplate, projectID);
+
+    mockup.insertAdjacentHTML('beforeend', `${desktopSVG}${mobileSVG}`);
+    addClassesToImages(mockup, projectID);
   });
 }
 
+function addIDsToDesktopSVGs(desktopSVGTemplate, projectID) {
+  const desktopSVG = desktopSVGTemplate.replace('id="placeholderIDdesktop"', `id=desktopSVG-${projectID}`);
+  return desktopSVG;
+}
 
-function SVGurl() {
+function addIDsToMobileSVGs(mobileSVGTemplate, projectID) {
+  const mobileSVG = mobileSVGTemplate.replace('id="placeholderIDmobile"', `id=mobileSVG-${projectID}`);
+  return mobileSVG;
+}
+
+function addClassesToImages(mockup, projectID) {
+  const desktopImage = mockup.querySelector('.desktop-image');
+  const mobileImage = mockup.querySelector('.mobile-image');
+  desktopImage.classList.add(projectID);
+  mobileImage.classList.add(projectID);
+}
+
+function addImagesToSVG() {
 
   const projectIDs = getIDofLiElements();
   projectIDs.forEach((projectID) => {
@@ -146,3 +174,17 @@ function SVGurl() {
     mobileImage.setAttribute("href", href_mobile);
   });
 }
+
+
+function removeCertainMobileSVGs(id) {
+
+  const mobileSVGs = document.querySelectorAll(`[id*="mobileSVG-"]`);
+  mobileSVGs.forEach(el => {
+    if (el.id == id) {
+      el.remove();
+    }
+  });
+}
+
+
+
