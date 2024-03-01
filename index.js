@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   createAndInsertSVG();
+  removeMobileSVGforCLIprojects(["mobileSVG-figure-ascii-art"]);
   addImagesToSVG();
 
-  removeCertainMobileSVGs("mobileSVG-figure-ascii-art");
 
 });
 
@@ -162,7 +162,6 @@ function addClassesToImages(mockup, projectID) {
 }
 
 function addImagesToSVG() {
-
   const projectIDs = getIDofLiElements();
   projectIDs.forEach((projectID) => {
     const desktopImage = document.querySelector(`.desktop-image.${projectID}`);
@@ -175,16 +174,13 @@ function addImagesToSVG() {
   });
 }
 
+function removeMobileSVGforCLIprojects(listOfIDs) {
+  const idsToRemove = new Set(listOfIDs.map(id => `${id}`));
 
-function removeCertainMobileSVGs(id) {
-
-  const mobileSVGs = document.querySelectorAll(`[id*="mobileSVG-"]`);
-  mobileSVGs.forEach(el => {
-    if (el.id == id) {
-      el.remove();
+  const mobileSVGs = document.querySelectorAll('[id*="mobileSVG-"]');
+  mobileSVGs.forEach(svg => {
+    if (idsToRemove.has(svg.id)) {
+      svg.remove();
     }
   });
 }
-
-
-
