@@ -18,6 +18,13 @@
   align-items: center;
 }
 
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
 img {
   border-radius: 0.5rem 0.5rem 0 0;
   width: 100%;
@@ -64,6 +71,14 @@ figcaption {
 .icon {
   height: 4rem;
   width: auto;
+}
+
+.github {
+  width: 3rem;
+}
+
+.github:hover {
+  filter: invert(1);
 }
 
 /* scrollbar styling: */
