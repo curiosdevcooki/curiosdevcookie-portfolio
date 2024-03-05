@@ -59,6 +59,8 @@ h2 {
 h4 {
   font-size: calc(1.8rem + 0.5vw);
   padding: clamp(0.5rem, 2vw, 1rem);
+  white-space: nowrap;
+  transform: scaleX(0.9);
 }
 
 figcaption {
