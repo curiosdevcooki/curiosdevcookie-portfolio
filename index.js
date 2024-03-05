@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   createAndInsertSVG();
-  removeMobileSVGforCLIprojects(["mobileSVG-figure-ascii-art"]);
   addImagesToSVG();
+  removeMobileSVGforCLIprojects(["mobileSVG-figure-ascii-art"]);
 
 
 });
@@ -131,7 +131,7 @@ function createAndInsertSVG() {
 
 function insertSVG(desktopSVGTemplate, mobileSVGTemplate) {
   const projectIDs = getIDofLiElements();
-  console.log(projectIDs);
+  console.log("projectIDsINSERTED", projectIDs, projectIDs.length);
 
   projectIDs.forEach(projectID => {
     const mockup = document.getElementById(projectID).querySelector('.mockups');
@@ -163,6 +163,8 @@ function addClassesToImages(mockup, projectID) {
 
 function addImagesToSVG() {
   const projectIDs = getIDofLiElements();
+  console.log("projectIDsImages", projectIDs, projectIDs.length);
+
   projectIDs.forEach((projectID) => {
     const desktopImage = document.querySelector(`.desktop-image.${projectID}`);
     const href_desktop = `/images/projects/desktop/${projectID}.png`;
@@ -171,11 +173,12 @@ function addImagesToSVG() {
     const mobileImage = document.querySelector(`.mobile-image.${projectID}`);
     const href_mobile = `/images/projects/mobile/${projectID}.png`;
     mobileImage.setAttribute("href", href_mobile);
+
   });
 }
 
 function removeMobileSVGforCLIprojects(listOfIDs) {
-  const idsToRemove = new Set(listOfIDs.map(id => `${id}`));
+  const idsToRemove = new Set(listOfIDs);
 
   const mobileSVGs = document.querySelectorAll('[id*="mobileSVG-"]');
   mobileSVGs.forEach(svg => {
