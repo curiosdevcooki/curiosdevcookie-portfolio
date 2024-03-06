@@ -2,11 +2,11 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
   const slices = [
-    { percent: 0.20, color: 'purple' },
-    { percent: 0.25, color: 'blue' },
-    { percent: 0.15, color: 'lime' },
-    { percent: 0.30, color: 'yellow' },
-    { percent: 0.10, color: 'black' }
+    { percent: 0.20, color: 'purple', label: "Elixir" },
+    { percent: 0.25, color: 'blue', label: "Other" },
+    { percent: 0.15, color: 'green', label: "Python" },
+    { percent: 0.30, color: 'yellow', label: "JavaScript" },
+    { percent: 0.10, color: 'black', label: "C" }
   ];
 
   const svgNamespace = "http://www.w3.org/2000/svg";
@@ -28,10 +28,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     angleStart = angleEnd;  // Update the start angle for the next slice
   });
 
-  console.log('DOM fully loaded and parsed');
+  createLegend(slices);
 
-}
-);
+});
 
 function calculatePieSlice(radius, angleStart, angleEnd, cx, cy) {
   const x1 = cx + radius * Math.cos(Math.PI * angleStart / 180);
@@ -51,4 +50,34 @@ function calculatePieSlice(radius, angleStart, angleEnd, cx, cy) {
   ].join(" ");
 
   return d;
+}
+
+function createLegend(slices) {
+  const legendContainer = document.createElement('ul');
+  legendContainer.style.listStyle = 'none';
+  legendContainer.classList.add('legend-container');
+
+
+  slices.forEach(slice => {
+    const legendItem = document.createElement('li');
+    legendItem.style.display = 'flex';
+    legendItem.style.alignItems = 'center';
+    legendItem.style.gap = '2rem';
+
+    const colorBox = document.createElement('div');
+    colorBox.style.width = '2rem';
+    colorBox.style.height = '2rem';
+    colorBox.style.backgroundColor = slice.color;
+
+    const label = document.createElement('p');
+    label.textContent = slice.label;
+    label.style.color = 'white';
+
+    legendItem.appendChild(colorBox);
+    legendItem.appendChild(label);
+
+    legendContainer.appendChild(legendItem);
+  });
+
+  document.getElementById("pie-container").after(legendContainer);
 }
