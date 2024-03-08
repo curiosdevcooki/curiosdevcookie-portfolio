@@ -83,6 +83,13 @@ body {
   background-color: var(--color-purple);
 }
 
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4rem;
+  overflow: scroll;
+}
+
 header,
 footer {
   background-color: var(--color-black);
@@ -110,13 +117,6 @@ nav > *:first-child {
   font-size: 3.5rem;
 }
 
-main {
-  display: grid;
-
-  padding: 4rem;
-  overflow: scroll;
-}
-
 a {
   color: var(--color-white);
   text-decoration: none;
@@ -134,6 +134,13 @@ p {
   line-height: 1.5;
 }
 
+h1 {
+  color: var(--color-white);
+  font-family: var(--font-heading-narrow);
+  font-size: 3rem;
+  text-align: center;
+}
+
 h3 {
   color: var(--color-white);
   font-family: var(--font-handwritten-Beth);
@@ -141,5 +148,24 @@ h3 {
 }
 
 /* >>> 5. COMPONENTS <<<<<<<<<< */
+
+.portrait {
+  background-color: var(--color-white);
+  padding: 1rem;
+  color: blue;
+  width: 40rem;
+}
+
+.portrait img {
+  max-width: 100%;
+  height: auto;
+}
+
+.portrait figcaption {
+  font-size: 1.8rem;
+  font-family: var(--font-handwritten-Beth);
+  text-align: end;
+  padding-right: 3rem;
+}
 
 /* >>> 6. VARIA <<<<<<<<<<<<<<< */
