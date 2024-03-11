@@ -72,8 +72,9 @@ body,
 html {
   padding: 0;
   margin: 0;
-  height: 100dvh;
-  width: 100dvw;
+  max-height: 100dvh;
+  max-width: 100dvw;
+  overflow: hidden;
 }
 
 body {
@@ -85,9 +86,11 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-rows: 1fr;
   padding: 4rem;
   overflow: scroll;
+  height: 100vh;
 }
 
 header,
@@ -95,11 +98,16 @@ footer {
   background-color: var(--color-black);
   color: var(--color-white);
   font-family: var(--font-handwritten-Beth);
-  font-size: 2rem;
   padding: 0 2rem 0 2rem;
 }
 
+header {
+  font-size: 2rem;
+}
+
 footer {
+  position: sticky;
+  bottom: 0;
   display: flex;
   align-items: center;
 }
@@ -115,6 +123,7 @@ nav {
 
 nav > *:first-child {
   font-size: 3.5rem;
+  padding-bottom: 1rem;
 }
 
 a {
@@ -136,7 +145,7 @@ p {
 
 h1 {
   color: var(--color-white);
-  font-family: var(--font-heading-narrow);
+  font-family: var(--font-handwritten-Beth);
   font-size: 3rem;
   text-align: center;
 }
@@ -149,11 +158,25 @@ h3 {
 
 /* >>> 5. COMPONENTS <<<<<<<<<< */
 
+/* Portrait */
+
 .portrait {
+  position: relative;
   background-color: var(--color-white);
-  padding: 1rem;
   color: blue;
-  width: 40rem;
+  width: clamp(15rem, 20vw, 50rem);
+  height: max-content;
+  padding: 1rem;
+  border-radius: 0.2rem;
+  /* clip-path: polygon(
+    0% 1.55rem,
+    1.55rem 0%,
+    100% 0%,
+    100% calc(100% - 1.55rem),
+    calc(100% - 1.55rem) 100%,
+    0% 100%
+  ); */
+  transform: rotate(10deg);
 }
 
 .portrait img {
@@ -166,6 +189,30 @@ h3 {
   font-family: var(--font-handwritten-Beth);
   text-align: end;
   padding-right: 3rem;
+}
+
+.portrait::before,
+.portrait::after {
+  content: "";
+  position: absolute;
+  width: 5rem;
+  aspect-ratio: 1/1;
+}
+
+.portrait::before {
+  background-color: transparent;
+  left: -3.5rem;
+  top: -3.5rem;
+  rotate: 45deg;
+  box-shadow: 1.25rem 0rem 1rem -1.25rem var(--color-black);
+}
+
+.portrait::after {
+  background-color: transparent;
+  bottom: -3.5rem;
+  right: -3.5rem;
+  rotate: 45deg;
+  box-shadow: -1.25rem 0rem 1rem -1.25rem var(--color-black);
 }
 
 /* >>> 6. VARIA <<<<<<<<<<<<<<< */
