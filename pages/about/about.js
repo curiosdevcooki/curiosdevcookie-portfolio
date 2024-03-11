@@ -15,6 +15,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
   const cy = 150;
   let angleStart = 0;
 
+  const svgElement = document.createElementNS(svgNamespace, "svg");
+  svgElement.setAttribute("id", "pie-container");
+  svgElement.setAttribute("width", "300");
+  svgElement.setAttribute("height", "300");
+  svgElement.setAttribute("viewBox", "0 0 300 300");
+
   slices.forEach(slice => {
     const angleEnd = angleStart + slice.percent * 360;
 
@@ -23,10 +29,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     pathElement.setAttribute("d", pathData);
     pathElement.setAttribute("fill", slice.color);
 
-    document.getElementById("pie-container").appendChild(pathElement);
+    svgElement.appendChild(pathElement);
 
-    angleStart = angleEnd;  // Update the start angle for the next slice
+    angleStart = angleEnd;  // Updates the start angle for the next slice
   });
+
+  // svgElement.style.transform = "rotate3d(1, 1, 1, -100deg)";
+
+  document.querySelector('.pie-section').appendChild(svgElement);
 
   createLegend(slices);
 
@@ -51,6 +61,33 @@ function calculatePieSlice(radius, angleStart, angleEnd, cx, cy) {
 
   return d;
 }
+
+// function calculatePieSlice(radius, angleStart, angleEnd, cx, cy) {
+//   const innerRadius = radius * 0.8; 
+//   const outerRadius = radius;
+
+//   const x1_inner = cx + innerRadius * Math.cos(Math.PI * angleStart / 180);
+//   const y1_inner = cy + innerRadius * Math.sin(Math.PI * angleStart / 180);
+//   const x2_inner = cx + innerRadius * Math.cos(Math.PI * angleEnd / 180);
+//   const y2_inner = cy + innerRadius * Math.sin(Math.PI * angleEnd / 180);
+
+//   const x1_outer = cx + outerRadius * Math.cos(Math.PI * angleStart / 180);
+//   const y1_outer = cy + outerRadius * Math.sin(Math.PI * angleStart / 180);
+//   const x2_outer = cx + outerRadius * Math.cos(Math.PI * angleEnd / 180);
+//   const y2_outer = cy + outerRadius * Math.sin(Math.PI * angleEnd / 180);
+
+//   const largeArcFlag = angleEnd - angleStart <= 180 ? "0" : "1";
+
+//   const d = [
+//     "M", x1_inner, y1_inner,
+//     "A", innerRadius, innerRadius, 0, largeArcFlag, 1, x2_inner, y2_inner,
+//     "L", x2_outer, y2_outer,
+//     "A", outerRadius, outerRadius, 0, largeArcFlag, 0, x1_outer, y1_outer,
+//     "Z"
+//   ].join(" ");
+
+//   return d;
+// }
 
 function createLegend(slices) {
   const legendContainer = document.createElement('ul');
