@@ -25,6 +25,10 @@ class Footer extends HTMLElement {
           color: var(--color-green);
           text-decoration: underline;
         }
+
+        p {
+          font-size: clamp(1rem, 3vw, 2rem);
+        }
       </style>
 
         <section>
