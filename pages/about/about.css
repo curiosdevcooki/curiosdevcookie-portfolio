@@ -1,3 +1,8 @@
 .pie-section {
   display: flex;
 }
+
+h2 {
+  position: sticky;
+  text-shadow: 0.2rem 0.2rem 0.2rem var(--color-black);
+}
