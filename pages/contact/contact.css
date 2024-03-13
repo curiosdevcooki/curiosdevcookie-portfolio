@@ -1,0 +1,12 @@
+#contact-form > fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  color: var(--color-white);
+  gap: 1rem;
+  padding: 2rem;
+}
+
+#contact-form > fieldset > button {
+  align-self: end;
+}

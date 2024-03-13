@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Contact</title>
+    <link type="text/css" rel="stylesheet" href="./contact.css" />
+    <link type="text/css" rel="stylesheet" href="../../index.css" />
+
+    <script type="module" src="../../components/footer/cdc-footer.js"></script>
+  </head>
+  <body>
+    <header>
+      <h2>Contact me</h2>
+      <!-- <nav>
+        <a href="/index.html">⌂</a>
+      </nav> -->
+    </header>
+    <main>
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/xleqlzln"
+        method="POST"
+      >
+        <fieldset>
+          <legend>Contact Information</legend>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+          />
+
+          <label for="message">Message:</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="4"
+            placeholder="Your message"
+            required
+          ></textarea>
+
+          <button type="submit">Contact me!</button>
+        </fieldset>
+      </form>
+    </main>
+
+    <footer>
+      <cdc-footer></cdc-footer>
+    </footer>
+  </body>
+</html>
