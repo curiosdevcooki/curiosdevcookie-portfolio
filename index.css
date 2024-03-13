@@ -105,6 +105,11 @@ header {
   font-size: 2rem;
 }
 
+.header-subpages {
+  display: flex;
+  justify-content: space-between;
+}
+
 footer {
   position: sticky;
   bottom: 0;
