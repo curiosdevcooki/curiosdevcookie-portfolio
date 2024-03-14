@@ -10,8 +10,3 @@
 #contact-form > fieldset > button {
   align-self: end;
 }
-
-main {
-  overflow-y: scroll;
-  padding: 2rem;
-}
