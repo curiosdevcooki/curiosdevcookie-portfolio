@@ -90,7 +90,7 @@ main {
   grid-template-rows: 1fr;
   padding: 4rem;
   overflow: scroll;
-  height: 100vh;
+  height: calc(100dvh - 20rem);
 }
 
 header,
