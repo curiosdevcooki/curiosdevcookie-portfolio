@@ -130,5 +130,16 @@
     <footer>
       <cdc-footer></cdc-footer>
     </footer>
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            document.getElementById("contact-form").submit();
+          }
+        });
+    </script>
   </body>
 </html>
