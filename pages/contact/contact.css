@@ -33,6 +33,11 @@ legend {
   margin: 2rem 0;
 }
 
+fieldset:has(input[required]) > label::before {
+  content: " * ";
+  color: red;
+}
+
 input {
   padding: 0.8rem;
   border-radius: 0.5rem;
