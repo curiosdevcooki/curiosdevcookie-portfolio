@@ -34,93 +34,93 @@
             required
           />
 
-          <h3>Classics</h3>
+          <fieldset>
+            <legend>Classics</legend>
 
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Your Email"
-          />
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+            />
 
-          <label for="phone">Phone:</label>
-          <input
-            type="tel"
-            id="phone"
-            name="phone"
-            placeholder="Your landline"
-          />
+            <label for="phone">Phone:</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="Your landline"
+            />
 
-          <label for="cellphone">Cell:</label>
-          <input
-            type="tel"
-            id="cellphone"
-            name="cellphone"
-            placeholder="Your cell"
-          />
+            <label for="cellphone">Cell:</label>
+            <input
+              type="tel"
+              id="cellphone"
+              name="cellphone"
+              placeholder="Your cell"
+            />
+          </fieldset>
 
-          <h3>Socials</h3>
+          <fieldset>
+            <legend>Socials</legend>
 
-          <label for="twitter">Twitter/X:</label>
-          <input
-            type="url"
-            id="twitter"
-            name="twitter"
-            placeholder="Your Twitter/X"
-          />
+            <label for="twitter">Twitter/X:</label>
+            <input
+              type="url"
+              id="twitter"
+              name="twitter"
+              placeholder="Your Twitter/X"
+            />
 
-          <label for="facebook">Facebook:</label>
-          <input
-            type="url"
-            id="facebook"
-            name="facebook"
-            placeholder="Your Facebook"
-          />
+            <label for="facebook">Facebook:</label>
+            <input
+              type="url"
+              id="facebook"
+              name="facebook"
+              placeholder="Your Facebook"
+            />
 
-          <label for="linkedin">LinkedIn:</label>
-          <input
-            type="url"
-            id="linkedin"
-            name="linkedin"
-            placeholder="Your LinkedIn"
-          />
+            <label for="linkedin">LinkedIn:</label>
+            <input
+              type="url"
+              id="linkedin"
+              name="linkedin"
+              placeholder="Your LinkedIn"
+            />
+          </fieldset>
 
-          <h3>Some questions</h3>
-          <label for="preferred-contact">Preferred contact:</label>
-          <select id="preferred-contact" name="preferred-contact">
-            <option value="email">Email</option>
-            <option value="phone">Phone</option>
-            <option value="cellphone">Cell</option>
-            <option value="twitter">Twitter/X</option>
-            <option value="facebook">Facebook</option>
-            <option value="linkedin">LinkedIn</option>
-          </select>
+          <fieldset>
+            <legend>Some Questions</legend>
+            <label for="preferred-contact">Preferred contact:</label>
+            <select id="preferred-contact" name="preferred-contact">
+              <option value="email">Email</option>
+              <option value="phone">Phone</option>
+              <option value="cellphone">Cell</option>
+              <option value="twitter">Twitter/X</option>
+              <option value="facebook">Facebook</option>
+              <option value="linkedin">LinkedIn</option>
+            </select>
 
-          <label for="portfolio">Want to share your portfolio?</label>
-          <input
-            type="url"
-            id="portfolio"
-            name="portfolio"
-            placeholder="Your portfolio"
-          />
+            <label for="portfolio">Want to share your portfolio?</label>
+            <input
+              type="url"
+              id="portfolio"
+              name="portfolio"
+              placeholder="Your portfolio"
+            />
 
-          <label for="finding-me">How did you find me?</label>
-          <input
-            type="text"
-            id="finding-me"
-            name="finding-me"
-            placeholder="How did you find me?"
-          />
+            <label for="finding-me">How did you find me?</label>
+            <input
+              type="text"
+              id="finding-me"
+              name="finding-me"
+              placeholder="How did you find me?"
+            />
+          </fieldset>
 
           <label for="message">Message:</label>
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="Your message"
-            required
-          ></textarea>
+          <textarea id="message" name="message" rows="4" required></textarea>
 
           <button type="submit">Contact me!</button>
         </fieldset>
@@ -130,5 +130,20 @@
     <footer>
       <cdc-footer></cdc-footer>
     </footer>
+
+    <script>
+      document
+        .getElementById("contact-form")
+        .addEventListener("keypress", function (e) {
+          if (
+            e.key === "Enter" &&
+            e.target.tagName !== "TEXTAREA" &&
+            document.getElementById("contact-form").checkValidity()
+          ) {
+            e.preventDefault();
+            document.getElementById("contact-form").submit();
+          }
+        });
+    </script>
   </body>
 </html>
