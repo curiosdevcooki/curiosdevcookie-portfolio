@@ -1,37 +1,38 @@
-
 function replicateElement(elementId, maxDepth, currentLevel) {
-  // Base case: if the current level equals the max depth, stop recursion
+  // Base case:
   if (currentLevel >= maxDepth) {
     return;
   }
 
-  // Find the element to replicate
-  var original = document.getElementById(elementId);
-  if (!original) {
-    console.error('Element not found:', elementId);
-    return;
-  }
+  const original = document.getElementById(elementId);
 
-  // Ensure the original container is positioned relatively to anchor absolute children
+  const parent = original.parentElement;
+
+  // get all children of the parent element
+  const children = parent.children;
+  console.log("Children:", children);
+
   if (currentLevel === 0) {
-    original.style.position = 'relative';
+    parent.style.position = 'relative';
+    parent.style.zIndex = 2;
   }
 
-  // Clone the original element
-  var clone = original.cloneNode(true); // deep clone
+  const clone = original.cloneNode(true);
 
-  // Modify the clone's ID to avoid duplicate IDs in the DOM and adjust styles for overlap
   clone.id = `${elementId}-clone-${currentLevel}`;
   clone.style.position = 'absolute';
-  clone.style.left = `${0.5 * currentLevel}rem`; // Horizontal movement, adjust as needed
-  clone.style.top = `${0.5 * currentLevel}rem`; // Vertical movement, adjust as needed
 
-  // Append the cloned element to the original one (or to the main container for positioning)
-  original.appendChild(clone); // Append to the original to keep it all in one container
+  clone.style.left = `${2.3 * currentLevel}rem`;
+  clone.style.top = `${2.5 * currentLevel}rem`;
 
-  // Recur with incremented level
+  original.style.opacity = 0.1;
+  clone.style.opacity = `${0.1 + currentLevel * 0.2}`;
+
+  clone.style.fontSize = `${1.5 + currentLevel}rem`;
+
+  parent.appendChild(clone);
+
   replicateElement(`${elementId}-clone-${currentLevel}`, maxDepth, currentLevel + 1);
 }
 
-// Initialize the replication process
-replicateElement('portrait-section', 7, 0);
+replicateElement('welcome', 7, 0);

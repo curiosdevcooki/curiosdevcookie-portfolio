@@ -87,7 +87,7 @@ body {
 main {
   display: grid;
   grid-template-rows: 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
   padding: 4rem;
   overflow: scroll;
   height: calc(100dvh - 20rem);
