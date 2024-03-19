@@ -29,6 +29,21 @@ function replicateElement(elementId, maxDepth, currentLevel) {
   clone.style.opacity = `${0.1 + currentLevel * 0.2}`;
   clone.style.fontSize = `${5.5 + currentLevel}rem`;
 
+  // give every element a different font family:
+  const fontFamilies = [
+    'Monospace',
+    'Verdana',
+    'Courier New',
+    'Times New Roman',
+    'Georgia',
+    'Arial',
+    'Impact',
+  ];
+
+  clone.style.fontFamily = fontFamilies[currentLevel];
+
+
+
   parent.appendChild(clone);
 
   // hide elements:
