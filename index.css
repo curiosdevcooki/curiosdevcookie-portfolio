@@ -19,7 +19,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Beth+Ellen&display=swap");
 
 /* >>> 1. RESETS  <<<<<<<<<<<<< */
-
 :root {
   padding: 0;
   margin: 0;
@@ -93,6 +92,26 @@ main {
   height: calc(100dvh - 20rem);
 }
 
+.main-landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(35rem, 20vw, 45rem);
+  padding: 8rem;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .main-landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #welcome-section {
+    display: none;
+  }
+}
+
 header,
 footer {
   background-color: var(--color-black);
@@ -163,7 +182,7 @@ h3 {
 
 /* >>> 5. COMPONENTS <<<<<<<<<< */
 
-/* Portrait */
+/* Portrait Section */
 
 .portrait {
   position: relative;
