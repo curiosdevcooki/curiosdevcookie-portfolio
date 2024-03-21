@@ -39,18 +39,11 @@
   --font-heading-80s: "Rubik 80s Fade", sans-serif;
   --font-headings: "Mona Sans", sans-serif;
   --font-handwritten-Beth: "Beth Ellen", cursive;
-  --font-regular: "Roboto Flex", sans-serif;
 }
 
 @font-face {
   font-family: var(--font-heading-narrow);
   src: url("./fonts/Arima/Arima-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: var(--font-regular);
-  src: url("./fonts/Roboto_Flex/RobotoFlex-VariableFont_GRAD\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf")
-    format("truetype");
 }
 
 @font-face {
@@ -82,6 +75,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 7rem 1fr 7rem;
   background-color: var(--color-purple);
+  background-image: url("./images/textures/black-linen.png");
 }
 
 main {
@@ -116,9 +110,11 @@ main {
 header,
 footer {
   background-color: var(--color-black);
+  background-image: url("./images/textures/black-linen.png");
   color: var(--color-white);
   font-family: var(--font-handwritten-Beth);
   padding: 0 2rem 0 2rem;
+  box-shadow: 0 0 1rem 0.2rem var(--color-black);
 }
 
 header {

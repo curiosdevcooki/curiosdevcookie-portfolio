@@ -1,10 +1,9 @@
-
 # hello world, welcome to my corner! <img src='https://raw.githubusercontent.com/curiosdevcookie/portfolio-v1.4.1/main/wave.gif' width='30px'/>
 
 This is my portfolio:
 https://www.curiosdevcookie.dev
 
-It's a work-in-progress, but for the sake of building in public, I've decided to share it as is 🦖
+It's a work in progress, but for the sake of building in public, I've decided to share it as is 🦖
 
 Total number of visitors: ![Visitor Badge](https://visitor-badge.laobi.icu/badge?page_id=curiosdevcookie)
 
