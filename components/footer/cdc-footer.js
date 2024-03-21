@@ -32,7 +32,7 @@ class Footer extends HTMLElement {
       </style>
 
         <section>
-        <p>✨ Built in 🇪🇺🇩🇪…  with copious amounts of [🫀, 🧠 , ☕️ , 🎉] by <a href='https://twitter.com/curiosdevcookie'> @curiosdevcookie</a> .✨</p>
+        <p>✨ Built in 🇪🇺🇩🇪…  with copious amounts of [🫀, 🧠 , ☕️ , 🎉] by <a href='https://twitter.com/curiosdevcookie' rel="noopener noreferrer"> @curiosdevcookie</a> ✨</p>
         </section>
     `;
   }
