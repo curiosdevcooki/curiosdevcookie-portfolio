@@ -28,21 +28,7 @@ function replicateElement(elementId, maxDepth, currentLevel) {
   original.style.opacity = 0.1;
   clone.style.opacity = `${0.1 + currentLevel * 0.2}`;
   clone.style.fontSize = `${5.5 + currentLevel}rem`;
-
-  // give every element a different font family:
-  const fontFamilies = [
-    'Monospace',
-    'Verdana',
-    'Courier New',
-    'Times New Roman',
-    'Georgia',
-    'Arial',
-    'Impact',
-  ];
-
-  clone.style.fontFamily = fontFamilies[currentLevel];
-
-
+  clone.style.fontFamily = getFontFamilies(currentLevel);
 
   parent.appendChild(clone);
 
@@ -56,3 +42,11 @@ function replicateElement(elementId, maxDepth, currentLevel) {
 }
 
 replicateElement('welcome', 7, 0);
+
+function getFontFamilies(level) {
+  const fontFamilies = [
+    'Monospace', 'Verdana', 'Courier New',
+    'Times New Roman', 'Georgia', 'Arial', 'Impact'
+  ];
+  return fontFamilies[level % fontFamilies.length];
+}
