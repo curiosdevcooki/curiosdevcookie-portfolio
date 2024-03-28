@@ -249,5 +249,6 @@ h3 {
 /* >>> 6. VARIA <<<<<<<<<<<<<<< */
 
 #home {
-  margin-top: 4rem;
+  margin-top: 3.5rem;
+  width: clamp(3rem, 1vw, 3rem);
 }
