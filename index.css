@@ -121,7 +121,7 @@ header {
   font-size: 2rem;
 }
 
-.header-subpages {
+.header-pages {
   display: flex;
   justify-content: space-between;
 }
