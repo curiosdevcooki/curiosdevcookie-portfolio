@@ -74,10 +74,3 @@ h2 {
     transform: scale(1);
   }
 }
-
-/* Subpages */
-
-nav {
-  display: flex;
-  gap: 2.5rem;
-}

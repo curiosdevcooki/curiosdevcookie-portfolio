@@ -133,7 +133,7 @@ footer {
   align-items: center;
 }
 
-nav {
+.main-nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -142,9 +142,26 @@ nav {
   height: 100%;
 }
 
-nav > *:first-child {
+.main-nav > *:first-child {
   font-size: 3.5rem;
-  padding-bottom: 1rem;
+}
+
+/* For subpages */
+.sub-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+
+.sub-nav #arrow-back {
+  font-size: 3rem;
+  text-decoration: none;
+  padding-left: 3rem;
+}
+
+.sub-nav #home {
+  width: clamp(3rem, 1vw, 3rem);
+  margin-top: 2rem;
 }
 
 a {
@@ -247,8 +264,3 @@ h3 {
 }
 
 /* >>> 6. VARIA <<<<<<<<<<<<<<< */
-
-#home {
-  margin-top: 3.5rem;
-  width: clamp(3rem, 1vw, 3rem);
-}

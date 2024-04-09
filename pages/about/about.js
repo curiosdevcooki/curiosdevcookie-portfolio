@@ -129,10 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   diamondImages.forEach(img => {
     img.addEventListener('click', () => {
-      const url_partial = img.alt;
-
+      const url_partial_raw = img.alt;
+      // replace all white spaces with underscores:
+      const url_partial = url_partial_raw.replace(/\s/g, '_');
       const url = `/pages/about/subpages/${url_partial}.html`;
-
       window.open(url, '_self');
     });
   });
