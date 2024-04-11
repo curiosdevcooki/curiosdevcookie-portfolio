@@ -1,12 +1,10 @@
-/** @format */
-
-.pie-section {
-  display: flex;
-}
-
 h2 {
   position: sticky;
   text-shadow: 0.2rem 0.2rem 0.2rem var(--color-black);
+}
+
+body {
+  height: 100vh;
 }
 
 #main-about {
@@ -73,4 +71,20 @@ h2 {
   100% {
     transform: scale(1);
   }
+}
+
+/* Subpages */
+
+main {
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.under-construction {
+  width: 100%;
+}
+
+/* Tech */
+.pie-section {
+  display: flex;
 }

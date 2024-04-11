@@ -124,16 +124,46 @@ function createLegendItem(color, label) {
   return legendItem;
 }
 
+
+// Diamond tiles
 document.addEventListener('DOMContentLoaded', () => {
   const diamondImages = document.querySelectorAll('.diamond');
 
   diamondImages.forEach(img => {
-    img.addEventListener('click', () => {
-      const url_partial_raw = img.alt;
-      // replace all white spaces with underscores:
-      const url_partial = url_partial_raw.replace(/\s/g, '_');
-      const url = `/pages/about/subpages/${url_partial}.html`;
-      window.open(url, '_self');
-    });
+    addClickAndRoute(img);
+    appendHeading(img);
   });
 });
+
+function addClickAndRoute(img) {
+  img.addEventListener('click', () => {
+    const url_partial_raw = img.alt;
+    const url_partial = url_partial_raw.toLowerCase().replace(/\s/g, '_');
+    const url = `/pages/about/subpages/${url_partial}.html`;
+    window.open(url, '_self');
+  });
+}
+
+function appendHeading(img) {
+  const h4 = document.createElement('h4');
+  h4.textContent = img.alt;
+
+  h4.style.position = 'absolute';
+  h4.style.top = '20%';
+  h4.style.left = '50%';
+  h4.style.transform = 'translate(-50%, -50%)';
+  h4.style.color = 'white';
+  h4.style.fontSize = 'clamp(2rem, 2vw, 3rem)';
+
+
+  img.addEventListener('mouseover', () => {
+    document.body.appendChild(h4);
+  });
+  img.addEventListener('mouseleave', () => {
+    document.body.removeChild(h4);
+  });
+
+
+}
+
+
