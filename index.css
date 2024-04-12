@@ -150,7 +150,8 @@ footer {
 .sub-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  place-items: center;
+  /* orient content to the right: */
+  justify-content: end;
 }
 
 .sub-nav #arrow-back {
