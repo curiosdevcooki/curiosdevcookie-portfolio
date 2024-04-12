@@ -150,14 +150,13 @@ footer {
 .sub-nav {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* orient content to the right: */
-  justify-content: end;
+  place-items: center;
 }
 
 .sub-nav #arrow-back {
-  font-size: 3rem;
-  text-decoration: none;
   padding-right: clamp(1rem, 1vw, 2rem);
+  width: clamp(3rem, 1vw, 3rem);
+  margin-top: 2rem;
 }
 
 .sub-nav #home {
