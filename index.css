@@ -156,7 +156,7 @@ footer {
 .sub-nav #arrow-back {
   font-size: 3rem;
   text-decoration: none;
-  padding-left: 3rem;
+  padding-right: clamp(1rem, 1vw, 2rem);
 }
 
 .sub-nav #home {
