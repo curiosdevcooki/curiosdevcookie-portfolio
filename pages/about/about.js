@@ -130,8 +130,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const diamondImages = document.querySelectorAll('.diamond');
 
   diamondImages.forEach(img => {
+    const h4 = document.createElement('h4');
+    h4.textContent = img.alt;
+
+
+
     addClickAndRoute(img);
-    appendHeading(img);
+    appendHeading(img, h4);
+    if (window.innerWidth < 620) {
+      appendDotAndHeading(img, h4);
+    }
   });
 });
 
@@ -144,16 +152,8 @@ function addClickAndRoute(img) {
   });
 }
 
-function appendHeading(img) {
-  const h4 = document.createElement('h4');
-  h4.textContent = img.alt;
+function appendHeading(img, h4) {
 
-  h4.style.position = 'absolute';
-  h4.style.top = '20%';
-  h4.style.left = '50%';
-  h4.style.transform = 'translate(-50%, -50%)';
-  h4.style.color = 'white';
-  h4.style.fontSize = 'clamp(2rem, 2vw, 3rem)';
 
 
   img.addEventListener('mouseover', () => {
@@ -162,8 +162,35 @@ function appendHeading(img) {
   img.addEventListener('mouseleave', () => {
     document.body.removeChild(h4);
   });
+}
 
 
+function appendDotAndHeading(img, h4) {
+  const dotList = document.getElementById('dot-list');
+
+  const dot = document.createElement('div');
+  dot.classList.add('dot');
+  dotList.appendChild(dot);
+
+  const main = document.getElementById('main-about');
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Prepend the h4 before the diamonds section:
+        main.prepend(h4);
+
+
+        dot.style.backgroundColor = 'aliceblue';
+        dot.style.borderColor = 'aliceblue';
+      } else {
+        main.removeChild(h4);
+        dot.style.backgroundColor = 'transparent';
+        dot.style.borderColor = 'aliceblue';
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(img);
 }
 
 

@@ -7,56 +7,118 @@ body {
   height: 100vh;
 }
 
-#main-about {
-  display: grid;
-  place-items: center;
-}
-
 /* The diamond tiles */
 
-#diamonds {
-  --image-size: 10rem;
+/* large screens */
+@media screen and (min-width: 621px) {
+  #diamonds {
+    --image-size: 10rem;
 
-  display: grid;
-  grid-template-columns: repeat(6, var(--image-size));
-  grid-template-rows: repeat(3, var(--image-size));
-  gap: 0.2rem;
+    display: grid;
+    grid-template-columns: repeat(6, var(--image-size));
+    grid-template-rows: repeat(3, var(--image-size));
+    gap: 0.2rem;
 
-  img {
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    grid-column: span 2;
-    place-items: center;
+    img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      grid-column: span 2;
+      place-items: center;
 
-    border: white solid 0.2rem;
+      border: white solid 0.2rem;
 
-    border-radius: 3.5rem;
-    clip-path: path(
-      "M 80 20 C 100 0 100 0 120 20 C 140 40 160 60 180 80 C 200 100 200 100 180 120 C 160 140 140 160 120 180 C 100 200 100 200 80 180 C 60 160 40 140 20 120 C 0 100 0 100 20 80 Z"
-    );
-    background-color: var(--color-white);
-    box-shadow: 0.2rem 0.2rem 0.2rem var(--color-black);
-
-    &:hover {
+      border-radius: 3.5rem;
       clip-path: path(
-        "M 178 30 c -10.0035 -10.0035 -23.247 -15.471 -37.3815 -15.471 s -27.4185 5.508 -37.422 15.5115 l -5.2245 5.2245 l -5.3055 -5.3055 c -10.0035 -10.0035 -23.328 -15.552 -37.4625 -15.552 c -14.094 0 -27.378 5.508 -37.341 15.471 c -10.0035 10.0035 -15.5115 23.2875 -15.471 37.422 c 0 14.1345 5.5485 27.378 15.552 37.3815 l 76.059 76.059 c 1.053 1.053 2.4705 1.62 3.8475 1.62 c 1.377 0 2.7945 -0.5265 3.8475 -1.5795 l 76.221 -75.9375 c 10.0035 -10.0035 15.5115 -23.2875 15.5115 -37.422 C 191.0794 50.4229 185.6119 37.1389 175.6084 27.1354 z"
+        "M 80 20 C 100 0 100 0 120 20 C 140 40 160 60 180 80 C 200 100 200 100 180 120 C 160 140 140 160 120 180 C 100 200 100 200 80 180 C 60 160 40 140 20 120 C 0 100 0 100 20 80 Z"
       );
-      z-index: 1;
-      cursor: pointer;
-      animation: pulse 1.5s linear infinite;
+      background-color: var(--color-white);
+      box-shadow: 0.2rem 0.2rem 0.2rem var(--color-black);
+
+      &:hover {
+        clip-path: path(
+          "M 178 30 c -10.0035 -10.0035 -23.247 -15.471 -37.3815 -15.471 s -27.4185 5.508 -37.422 15.5115 l -5.2245 5.2245 l -5.3055 -5.3055 c -10.0035 -10.0035 -23.328 -15.552 -37.4625 -15.552 c -14.094 0 -27.378 5.508 -37.341 15.471 c -10.0035 10.0035 -15.5115 23.2875 -15.471 37.422 c 0 14.1345 5.5485 27.378 15.552 37.3815 l 76.059 76.059 c 1.053 1.053 2.4705 1.62 3.8475 1.62 c 1.377 0 2.7945 -0.5265 3.8475 -1.5795 l 76.221 -75.9375 c 10.0035 -10.0035 15.5115 -23.2875 15.5115 -37.422 C 191.0794 50.4229 185.6119 37.1389 175.6084 27.1354 z"
+        );
+        z-index: 1;
+        cursor: pointer;
+        animation: pulse 1.5s linear infinite;
+      }
+
+      &:nth-child(4) {
+        grid-column: 2 / span 2;
+      }
     }
 
-    &:nth-child(4) {
-      grid-column: 2 / span 2;
+    .diamond {
+      width: 100%;
+    }
+  }
+
+  #dot-list {
+    display: none;
+  }
+
+  h4 {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: clamp(2rem, 2vw, 3rem);
+    white-space: nowrap;
+  }
+}
+
+/* Small screens */
+@media (max-width: 620px) {
+  #main-about {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10rem 1fr 10rem;
+    height: 100%;
+  }
+  #diamonds {
+    display: flex;
+    overflow-x: scroll;
+    width: 100vw;
+    scroll-snap-type: x mandatory;
+
+    img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border: white solid 0.2rem;
+      border-radius: 1rem;
     }
   }
 
   .diamond {
-    width: 100%;
+    width: 99vw;
+    scroll-snap-align: start;
+  }
+
+  #dot-list {
+    display: flex;
+    height: 4rem;
+    padding-top: 4rem;
+  }
+
+  .dot {
+    width: 1rem;
+    height: 1rem;
+    border: solid 0.1rem var(--color-white);
+    border-radius: 50%;
+    margin: 0.5rem;
+  }
+
+  h4 {
+    position: relative;
+    color: white;
+    font-size: clamp(2rem, 2vw, 3rem);
+    white-space: nowrap;
+    padding-bottom: 2rem;
   }
 }
 
-/* aninations */
+/* animations */
 
 @keyframes pulse {
   0% {
@@ -79,7 +141,9 @@ main {
   display: grid;
   place-items: center;
   overflow: hidden;
+  padding: 0;
 }
+
 .under-construction {
   width: 100%;
 }
