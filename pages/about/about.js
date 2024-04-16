@@ -133,8 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const h4 = document.createElement('h4');
     h4.textContent = img.alt;
 
-
-
     addClickAndRoute(img);
     appendHeading(img, h4);
     if (window.innerWidth < 620) {
@@ -153,9 +151,6 @@ function addClickAndRoute(img) {
 }
 
 function appendHeading(img, h4) {
-
-
-
   img.addEventListener('mouseover', () => {
     document.body.appendChild(h4);
   });
@@ -163,7 +158,6 @@ function appendHeading(img, h4) {
     document.body.removeChild(h4);
   });
 }
-
 
 function appendDotAndHeading(img, h4) {
   const dotList = document.getElementById('dot-list');
@@ -177,18 +171,22 @@ function appendDotAndHeading(img, h4) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         // Prepend the h4 before the diamonds section:
-        main.prepend(h4);
+        if (!main.contains(h4)) {
+          main.prepend(h4);
+        }
 
 
         dot.style.backgroundColor = 'aliceblue';
         dot.style.borderColor = 'aliceblue';
       } else {
-        main.removeChild(h4);
+        if (main.contains(h4)) {
+          main.removeChild(h4);
+        }
         dot.style.backgroundColor = 'transparent';
         dot.style.borderColor = 'aliceblue';
       }
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.5 });
 
   observer.observe(img);
 }
