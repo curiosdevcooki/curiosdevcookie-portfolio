@@ -134,7 +134,9 @@ document.addEventListener('DOMContentLoaded', () => {
     h4.textContent = img.alt;
 
     addClickAndRoute(img);
-    appendHeading(img, h4);
+    if (window.innerWidth > 621) {
+      appendHeading(img, h4);
+    }
     if (window.innerWidth < 620) {
       appendDotAndHeading(img, h4);
     }
